@@ -1,7 +1,7 @@
 const net = require("net");
 const connect = function() {
   const conn = net.createConnection({
-    host: "10.0.2.15",
+    host: "172.46.0.203",
     port: 50541
   });
 
@@ -12,13 +12,12 @@ const connect = function() {
   });
   conn.on("connect", () => {
     console.log("Succefully connected to game server.");
-    setInterval(() => {
+    // setInterval(() => {
     //   conn.write("Move: up");
     // }, 1000); // - move up one square (unless facing down)
     conn.write("Name: Taha");
+    return conn;
   });
-
-  return conn;
 };
 
 module.exports = { connect };
@@ -26,4 +25,3 @@ module.exports = { connect };
 // "Move: up" - move up one square (unless facing down)
 // "Move: down" - move down one square (unless facing up)
 // "Move: left" - move left one square (unless facing right)
-//
