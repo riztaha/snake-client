@@ -2,6 +2,7 @@ const net = require("net");
 const connect = function() {
   const conn = net.createConnection({
     host: "172.46.0.203",
+    // host: "10.0.2.15",
     port: 50541
   });
 
@@ -16,8 +17,8 @@ const connect = function() {
     //   conn.write("Move: up");
     // }, 1000); // - move up one square (unless facing down)
     conn.write("Name: Taha");
-    return conn;
   });
+  return conn;
 };
 
 module.exports = { connect };
