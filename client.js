@@ -1,9 +1,11 @@
 const net = require("net");
+const { IP, PORT } = require("./constants");
+
 const connect = function() {
   const conn = net.createConnection({
-    host: "172.46.0.203",
+    host: IP
     // host: "10.0.2.15",
-    port: 50541
+    port: PORT
   });
 
   conn.setEncoding("utf8");
